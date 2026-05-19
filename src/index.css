@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* White background with very light green tint */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    /* Pure white cards */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Green primary color */
+    --primary: 144 61% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Very light green secondary */
+    --secondary: 144 45% 96%;
+    --secondary-foreground: 144 61% 25%;
+
+    /* Light green muted */
+    --muted: 144 30% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Vibrant green accent */
+    --accent: 144 61% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Dark green for special elements */
+    --green: 144 100% 21%;
+    --green-foreground: 0 0% 100%;
+
+    /* Orange color for hover effects */
+    --orange: 25 95% 53%;
+    --orange-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Light borders */
+    --border: 144 20% 90%;
+    --input: 144 20% 90%;
+    --ring: 144 61% 45%;
+
+    --radius: 0.75rem;
+
+    --primary-hover: 144 61% 30%;
+    --accent-hover: 144 61% 40%;
+
+    /* Green gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(144 61% 35%), hsl(144 61% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(144 61% 45%), hsl(144 61% 55%));
+
+    --shadow-soft: 0 4px 20px -4px hsl(144 30% 20% / 0.1);
+    --shadow-elevated: 0 10px 40px -10px hsl(144 30% 20% / 0.15);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 100%;
+
+    --sidebar-foreground: 0 0% 15%;
+
+    --sidebar-primary: 144 61% 35%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 144 45% 96%;
+
+    --sidebar-accent-foreground: 144 61% 25%;
+
+    --sidebar-border: 144 20% 90%;
+
+    --sidebar-ring: 144 61% 45%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 137 84% 97%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 137 84% 97%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 137 84% 97%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 137 84% 97%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 137 50% 65%;
+
+    --accent: 40 100% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --green: 144 100% 21%;
+    --green-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 25% 97%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply overflow-x-hidden;
+    max-width: 100vw;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    max-width: 100vw;
+  }
+  /* Custom Animation for Infinite Scroll */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll-left 30s linear infinite;
+    width: max-content; /* Ensure container fits all items */
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+}
