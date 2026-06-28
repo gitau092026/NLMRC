@@ -30,7 +30,7 @@ const About = () => {
               <Button
                 className="bg-[hsl(var(--orange))] hover:bg-[hsl(var(--orange))]/90 text-white rounded-none px-8 py-3 uppercase tracking-wide font-medium"
               >
-                Read More
+                Read More<span className="sr-only"> about NLMRC history and mission</span>
               </Button>
             </Link>
           </div>

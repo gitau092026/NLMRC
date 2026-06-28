@@ -1,0 +1,26 @@
+# New Life Mwangaza Rehabilitation Center (NLMRC)
+
+> New Life Mwangaza Rehabilitation Center (NLMRC) is a non-profit organization dedicated to transforming the lives of street-connected children through rescue, rehabilitation, and reintegration programs.
+
+This file provides Language Models with an overview and directory of key information about NLMRC's mission, impact, and services.
+
+## Main Pages
+
+- [Home](https://www.newlifemwangaza.org/): The main landing page with an overview of our mission and impact.
+- [About Us](https://www.newlifemwangaza.org/about/story): History, mission, vision, and team members.
+- [Services](https://www.newlifemwangaza.org/services): Detailed information about our core programs including education, shelter, rescue, and rehabilitation.
+- [Impact](https://www.newlifemwangaza.org/impact): Statistics and information on how we transform lives.
+- [Stories](https://www.newlifemwangaza.org/stories): Success stories and testimonies from the children we support.
+- [Donate](https://www.newlifemwangaza.org/donate): Information on how to support NLMRC financially, including monthly sponsorship and custom donation options.
+- [Volunteer](https://www.newlifemwangaza.org/volunteer): Opportunities to join us and volunteer your time.
+- [Careers](https://www.newlifemwangaza.org/career): Current job openings at NLMRC.
+- [Contact](https://www.newlifemwangaza.org/contact): Contact information and inquiry forms.
+
+## Optional
+
+- [Reports](https://www.newlifemwangaza.org/about/reports): Annual reports, financial summaries, and strategic plans.
+- [Newsletters](https://www.newlifemwangaza.org/impact/newsletters): Our regular newsletters with updates on our activities.
+- [Gallery](https://www.newlifemwangaza.org/gallery): Photos of our center and activities.
+- [Privacy Policy](https://www.newlifemwangaza.org/privacy-policy): How we handle data and privacy.
+- [Terms of Service](https://www.newlifemwangaza.org/terms): Terms and conditions for using our website.
+- [Disclaimer](https://www.newlifemwangaza.org/disclaimer): Legal disclaimers.

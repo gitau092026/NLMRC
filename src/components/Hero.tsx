@@ -119,7 +119,7 @@ const Hero = () => {
                   </div>
                   <Link to="/donate">
                     <Button className="bg-[hsl(var(--orange))] hover:bg-[hsl(var(--orange))]/90 text-white text-sm font-semibold h-10 px-8 rounded-md shadow-md transition-all hover:scale-105">
-                      Read More
+                      Read More<span className="sr-only"> about donating and rescue programs</span>
                     </Button>
                   </Link>
                 </div>
@@ -134,7 +134,7 @@ const Hero = () => {
                   </div>
                   <Link to="/donate">
                     <Button className="bg-[hsl(var(--orange))] hover:bg-[hsl(var(--orange))]/90 text-white text-sm font-semibold h-10 px-8 rounded-md shadow-md transition-all hover:scale-105">
-                      Read More
+                      Read More<span className="sr-only"> about sponsoring a child</span>
                     </Button>
                   </Link>
                 </div>
@@ -149,7 +149,7 @@ const Hero = () => {
                   </div>
                   <Link to="/volunteer">
                     <Button className="bg-[hsl(var(--orange))] hover:bg-[hsl(var(--orange))]/90 text-white text-sm font-semibold h-10 px-8 rounded-md shadow-md transition-all hover:scale-105">
-                      Read More
+                      Read More<span className="sr-only"> about volunteering with us</span>
                     </Button>
                   </Link>
                 </div>

@@ -58,7 +58,7 @@ const WhatWeDoPreview = () => {
             <div className="pt-4">
               <Link to="/services">
                 <Button className="bg-[hsl(var(--orange))] hover:bg-[hsl(var(--orange))]/90 text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  Read More
+                  Read More<span className="sr-only"> about our services and programs</span>
                   <svg 
                     className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" 
                     fill="none" 
