@@ -27,7 +27,7 @@ const OurTeam = () => {
                                     <div className="flex-shrink-0">
                                         <div className="w-28 h-28 rounded-full bg-gray-200 overflow-hidden relative">
                                             {member.image_url ? (
-                                                <img
+                                                <img loading="lazy"
                                                     src={member.image_url}
                                                     alt={member.name}
                                                     className="w-full h-full object-cover"

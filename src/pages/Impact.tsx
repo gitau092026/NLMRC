@@ -31,7 +31,7 @@ const ImpactPage = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <div className="relative w-full max-w-4xl bg-white rounded-lg overflow-hidden shadow-xl border border-gray-200 cursor-zoom-in group">
-                    <img
+                    <img loading="lazy"
                       src={imageUrl}
                       alt="Impact Report"
                       className="w-full h-auto object-contain block"
@@ -47,7 +47,7 @@ const ImpactPage = () => {
                 </DialogTrigger>
                 <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-transparent border-none shadow-none flex items-center justify-center outline-none">
                   <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-                    <img
+                    <img loading="lazy"
                       src={imageUrl}
                       alt="Impact Report Fullscreen"
                       className="w-auto h-auto max-w-full max-h-full object-contain rounded-md shadow-2xl"

@@ -152,7 +152,7 @@ const AlumniAdmin = () => {
                                 <label>Image</label>
                                 <div className="flex items-center gap-4">
                                     {formData.image_url && (
-                                        <img
+                                        <img loading="lazy"
                                             src={formData.image_url}
                                             alt="Preview"
                                             className="h-20 w-20 object-cover rounded-full border"
@@ -210,7 +210,7 @@ const AlumniAdmin = () => {
                                     <TableRow key={alum.id}>
                                         <TableCell>
                                             {alum.image_url ? (
-                                                <img src={alum.image_url} alt={alum.name} className="h-10 w-10 object-cover rounded-full" />
+                                                <img loading="lazy" src={alum.image_url} alt={alum.name} className="h-10 w-10 object-cover rounded-full" />
                                             ) : (
                                                 <div className="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 text-xs">No Img</div>
                                             )}

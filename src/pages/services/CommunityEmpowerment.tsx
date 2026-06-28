@@ -77,7 +77,7 @@ const CommunityEmpowerment = () => {
                             <div className="grid sm:grid-cols-2 gap-6 mt-12">
                                 <div className="rounded-2xl overflow-hidden shadow-lg h-64 group relative">
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                                    <img
+                                    <img loading="lazy"
                                         src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop"
                                         alt="Skills training workshop"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -85,7 +85,7 @@ const CommunityEmpowerment = () => {
                                 </div>
                                 <div className="rounded-2xl overflow-hidden shadow-lg h-64 group relative">
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                                    <img
+                                    <img loading="lazy"
                                         src={communityTraining}
                                         alt="Community training session"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -120,7 +120,7 @@ const CommunityEmpowerment = () => {
                         <div className="w-full lg:w-[400px] space-y-8 sticky top-32">
                             <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
-                                <img
+                                <img loading="lazy"
                                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
                                     alt="Community Meeting"
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"

@@ -31,7 +31,7 @@ const Events = () => {
             return (
               <div key={story.id} className="bg-white group hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <img loading="lazy"
                     src={story.image_url}
                     alt={story.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

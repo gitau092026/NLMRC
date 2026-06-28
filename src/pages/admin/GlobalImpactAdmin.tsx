@@ -142,7 +142,7 @@ const GlobalImpactAdmin = () => {
                                 <label>Image</label>
                                 <div className="flex items-center gap-4">
                                     {formData.image_url && (
-                                        <img src={formData.image_url} alt="Preview" className="h-16 w-16 object-cover rounded" />
+                                        <img loading="lazy" src={formData.image_url} alt="Preview" className="h-16 w-16 object-cover rounded" />
                                     )}
                                     <Input type="file" accept="image/*" onChange={handleFileUpload} disabled={uploading} />
                                 </div>
@@ -171,7 +171,7 @@ const GlobalImpactAdmin = () => {
                                 <TableRow key={item.id}>
                                     <TableCell className="font-medium flex items-center gap-2">
                                         {item.image_url ? (
-                                            <img src={item.image_url} alt={item.country} className="h-8 w-8 rounded-full object-cover" />
+                                            <img loading="lazy" src={item.image_url} alt={item.country} className="h-8 w-8 rounded-full object-cover" />
                                         ) : <Globe className="h-8 w-8 p-1 bg-muted rounded-full" />}
                                         {item.country}
                                     </TableCell>

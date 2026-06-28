@@ -75,7 +75,7 @@ const WhatWeDoPreview = () => {
           {/* Image side */}
           <div className="relative z-10 lg:h-[600px] h-[400px] rounded-3xl overflow-hidden shadow-2xl group border-4 border-white/50">
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-            <img 
+            <img loading="lazy" 
               src={rehabilitationImage} 
               alt="Rehabilitation Program" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"

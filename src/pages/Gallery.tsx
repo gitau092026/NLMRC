@@ -90,7 +90,7 @@ const Gallery = () => {
             className="max-w-5xl max-h-[90vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <img loading="lazy"
               src={selectedImage.image_url}
               alt={selectedImage.title}
               className="max-w-full max-h-[75vh] object-contain rounded-lg"

@@ -79,7 +79,7 @@ const Donate = () => {
                                 </div>
 
                                 <div className="bg-gray-50 p-4 rounded-3xl border border-gray-100 text-center transform hover:scale-[1.02] transition-transform duration-300">
-                                    <img
+                                    <img loading="lazy"
                                         src={mpesaPaybill}
                                         alt="LIPA NA M-PESA: Paybill 400200, Account 58992"
                                         className="w-full h-auto rounded-xl shadow-sm "

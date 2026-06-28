@@ -21,7 +21,7 @@ const GlobalImpact = () => {
                             {impacts?.map((impact) => (
                                 <div key={impact.id} className="p-8 bg-white rounded-3xl shadow-lg border border-gray-100 flex flex-col items-center">
                                     {impact.image_url ? (
-                                        <img src={impact.image_url} alt={impact.country} className="w-16 h-16 rounded-full object-cover " />
+                                        <img loading="lazy" src={impact.image_url} alt={impact.country} className="w-16 h-16 rounded-full object-cover " />
                                     ) : (
                                         <Globe className="w-12 h-12 text-[hsl(var(--orange))] mx-auto " />
                                     )}

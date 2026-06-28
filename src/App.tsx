@@ -23,11 +23,11 @@ import Prevention from "./pages/services/Prevention";
 import CommunityEmpowerment from "./pages/services/CommunityEmpowerment";
 
 import OurStory from "./pages/about/OurStory";
-import OurHistory from "./pages/about/OurHistory";
 import OurTeam from "./pages/about/OurTeam";
 import Resources from "./pages/Resources";
 import GlobalImpact from "./pages/about/GlobalImpact";
 import Donate from "./pages/Donate";
+import Volunteer from "./pages/Volunteer";
 
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -48,6 +48,8 @@ import HeroAdmin from "./pages/admin/HeroAdmin";
 import ImpactReportAdmin from "./pages/admin/ImpactReportAdmin";
 import AlumniAdmin from "./pages/admin/AlumniAdmin";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Disclaimer from "./pages/Disclaimer";
 
 import CookieConsent from "./components/CookieConsent";
 import WhatsAppChat from "./components/WhatsAppChat";
@@ -65,8 +67,7 @@ const App = () => (
         <WhatsAppChat />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<Navigate to="/about/history" replace />} />
-          <Route path="/about/history" element={<OurHistory />} />
+          <Route path="/about" element={<Navigate to="/about/story" replace />} />
           <Route path="/about/reports" element={<Reports />} />
           <Route path="/about/story" element={<OurStory />} />
           <Route path="/about/team" element={<OurTeam />} />
@@ -86,12 +87,17 @@ const App = () => (
           <Route path="/career/:id" element={<JobDetail />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/stories/:id" element={<StoryDetail />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/career/:id" element={<JobDetail />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/volunteer" element={<Volunteer />} />
 
           <Route path="/donate" element={<Donate />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<ProtectedRoute />}>
             <Route element={<AdminLayout />}>
               <Route index element={<Dashboard />} />

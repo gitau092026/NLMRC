@@ -8,7 +8,7 @@ import { Edit, Trash2, Plus, Loader2, Info } from "lucide-react";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-volunteers.webp";
 import aboutGroup from "@/assets/about-group.webp";
-import aboutPlanting from "@/assets/about-planting.jpg";
+import aboutPlanting from "@/assets/about-planting.webp";
 import heroEducation from "@/assets/20230725_153032.webp";
 
 const HeroAdmin = () => {

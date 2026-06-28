@@ -56,6 +56,9 @@ const Footer = () => {
     { name: "Success Stories", path: "/stories" },
     { name: "Contact", path: "/contact" },
     { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Volunteer", path: "/volunteer" },
+    { name: "Terms of Service", path: "/terms" },
+    { name: "Disclaimer", path: "/disclaimer" },
   ];
 
   return (
@@ -65,7 +68,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img
+              <img loading="lazy"
                 src={logo}
                 alt="NGO Logo"
                 className="h-16 w-auto object-contain bg-white/5 rounded-lg p-1"

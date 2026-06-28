@@ -126,7 +126,7 @@ const TeamAdmin = () => {
                                 <label>Image</label>
                                 <div className="flex items-center gap-4">
                                     {formData.image_url && (
-                                        <img
+                                        <img loading="lazy"
                                             src={formData.image_url}
                                             alt="Preview"
                                             className="h-20 w-20 object-cover rounded-full border"
@@ -180,7 +180,7 @@ const TeamAdmin = () => {
                                     <TableCell>
                                         <div className="h-10 w-10 overflow-hidden rounded-full">
                                             {member.image_url ? (
-                                                <img src={member.image_url} alt={member.name} className="h-full w-full object-cover" />
+                                                <img loading="lazy" src={member.image_url} alt={member.name} className="h-full w-full object-cover" />
                                             ) : (
                                                 <div className="h-full w-full bg-gray-200" />
                                             )}

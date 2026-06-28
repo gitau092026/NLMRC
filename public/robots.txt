@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
+# Disallow admin and auth routes
 Disallow: /admin/
 Disallow: /login
 

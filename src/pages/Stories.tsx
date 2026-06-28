@@ -34,7 +34,7 @@ const StoriesList = () => {
           className="group block bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
         >
           <div className="aspect-video relative overflow-hidden">
-            <img
+            <img loading="lazy"
               src={story.image_url}
               alt={story.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

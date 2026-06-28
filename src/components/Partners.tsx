@@ -99,7 +99,7 @@ const Partners = () => {
                 >
                   {/* Logo Image */}
                   <div className="w-full h-16 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                    <img
+                    <img loading="lazy"
                       src={partner.logo}
                       alt={`${partner.name} logo`}
                       className="max-w-full max-h-full object-contain transition-all duration-300"

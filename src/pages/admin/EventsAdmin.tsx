@@ -119,7 +119,7 @@ const EventsAdmin = () => {
                             {events?.map((event) => (
                                 <TableRow key={event.id}>
                                     <TableCell>
-                                        {event.image_url && <img src={event.image_url} alt={event.title} className="h-10 w-16 object-cover rounded" />}
+                                        {event.image_url && <img loading="lazy" src={event.image_url} alt={event.title} className="h-10 w-16 object-cover rounded" />}
                                     </TableCell>
                                     <TableCell className="font-medium">{event.title}</TableCell>
                                     <TableCell>{event.event_number}</TableCell>

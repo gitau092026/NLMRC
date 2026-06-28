@@ -162,7 +162,7 @@ const StoriesAdmin = () => {
                                 <label>Image</label>
                                 <div className="flex items-center gap-4">
                                     {formData.image_url && (
-                                        <img
+                                        <img loading="lazy"
                                             src={formData.image_url}
                                             alt="Preview"
                                             className="h-20 w-32 object-cover rounded border"
@@ -255,7 +255,7 @@ const StoriesAdmin = () => {
                                 {stories?.map((story) => (
                                     <TableRow key={story.id}>
                                         <TableCell>
-                                            <img src={story.image_url} alt={story.name} className="h-10 w-16 object-cover rounded" />
+                                            <img loading="lazy" src={story.image_url} alt={story.name} className="h-10 w-16 object-cover rounded" />
                                         </TableCell>
                                         <TableCell className="font-medium">{story.name}</TableCell>
                                         <TableCell>{story.category}</TableCell>

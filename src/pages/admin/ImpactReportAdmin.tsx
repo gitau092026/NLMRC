@@ -99,7 +99,7 @@ const ImpactReportAdmin = () => {
                 <CardContent>
                     {(reportImage as any)?.image_url ? (
                         <div className="rounded-lg overflow-hidden border border-gray-200 bg-gray-50">
-                            <img
+                            <img loading="lazy"
                                 src={(reportImage as any).image_url}
                                 alt="Current Impact Report"
                                 className="w-full h-auto max-h-[500px] object-contain"

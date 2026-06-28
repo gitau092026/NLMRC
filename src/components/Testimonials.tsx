@@ -56,7 +56,7 @@ const Testimonials = () => {
                 <CardContent className="p-0 h-full flex flex-col">
                   {/* Featured Image */}
                   <div className="h-64 md:h-80 lg:h-96 overflow-hidden relative">
-                    <img
+                    <img loading="lazy"
                       src={activeTestimonial.image_url}
                       alt={activeTestimonial.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -119,7 +119,7 @@ const Testimonials = () => {
                     <div className="flex gap-4 p-4">
                       {/* Small Image */}
                       <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
-                        <img
+                        <img loading="lazy"
                           src={testimonial.image_url}
                           alt={testimonial.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

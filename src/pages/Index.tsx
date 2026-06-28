@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Interventions from "@/components/Interventions";
 import About from "@/components/About";
-import Events from "@/components/Events";
 import WhatWeDoPreview from "@/components/WhatWeDoPreview";
 import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
@@ -10,6 +9,7 @@ import SEO from "@/components/SEO";
 
 import Mission from "@/components/Mission";
 import Stats from "@/components/Stats";
+import StoriesPreview from "@/components/StoriesPreview";
 
 const Index = () => {
   return (
@@ -24,10 +24,10 @@ const Index = () => {
       <Hero />
       <About />
       <Mission />
+      <WhatWeDoPreview />
       <Interventions />
       <Stats />
-      <Events />
-      <WhatWeDoPreview />
+      <StoriesPreview />
       <Partners />
       <Footer />
     </div>

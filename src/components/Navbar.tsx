@@ -15,9 +15,9 @@ const Navbar = () => {
     { label: "Home", href: "/" },
     {
       label: "About Us",
-      href: "/about/history",
+      href: "/about/story",
       submenu: [
-        { label: "Our History", href: "/about/history" },
+        { label: "Our Story", href: "/about/story" },
         { label: "Our Team", href: "/about/team" },
         { label: "Resources", href: "/resources" },
         { label: "Global Impact", href: "/about/global-impact" },
@@ -64,7 +64,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-16 md:h-20">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-2 group">
-                <img
+                <img loading="lazy"
                   src={logo}
                   alt="Logo"
                   className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"

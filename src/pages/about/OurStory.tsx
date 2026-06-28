@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Clock, Target, Flag, Heart, MapPin, Users, ArrowRight, Home, BookOpen, Brain, Stethoscope, Sprout } from "lucide-react";
 import { motion } from "framer-motion";
+import Values from "@/components/Values";
 
 // Local image assets
 import heroChildren from "@/assets/story/hero-children.jpg";
@@ -18,7 +19,7 @@ const OurStory = () => {
             <Navbar />
 
             {/* Modern Hero Section */}
-            <section className="relative h-[65vh] min-h-[400px] flex items-center justify-center overflow-hidden rounded-b-[2.5rem] md:rounded-b-[5rem] bg-black">
+            <section className="relative h-[40vh] md:h-[65vh] min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden rounded-b-[2.5rem] md:rounded-b-[5rem] bg-black">
                 <div className="absolute inset-0 z-0">
                     <motion.img 
                         initial={{ scale: 1.1 }}
@@ -32,7 +33,7 @@ const OurStory = () => {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/30 z-10" />
                 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center mt-20">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center mt-10 md:mt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -123,7 +124,7 @@ const OurStory = () => {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="md:col-span-7 rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group min-h-[250px] md:min-h-[300px] shadow-sm hover:shadow-xl transition-all duration-500"
                         >
-                            <img 
+                            <img loading="lazy" 
                                 src={childrenLearning} 
                                 alt="African children learning" 
                                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -138,16 +139,7 @@ const OurStory = () => {
             </section>
 
             {/* What We Do Section */}
-            <section className="py-16 md:py-24 text-white relative overflow-hidden">
-                {/* Background image with dark green overlay */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src={socialWorkerCommunity}
-                        alt="Social worker with African children"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/80" />
-                </div>
+            <section className="py-16 md:py-24 text-white relative overflow-hidden bg-green">
                 {/* Watermark text removed */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-12 md:mb-16">
@@ -210,7 +202,7 @@ const OurStory = () => {
                         </motion.div>
                         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
                             className="rounded-[2rem] overflow-hidden min-h-[350px] md:min-h-[480px] relative group shadow-xl">
-                            <img src={childrenCommunity}
+                            <img loading="lazy" src={childrenCommunity}
                                 alt="African kids in community" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                             <div className="absolute bottom-6 left-6 right-6">
@@ -257,7 +249,7 @@ const OurStory = () => {
                             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.15 }}
                                 className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500 group bg-background">
                                 <div className="relative h-48 overflow-hidden">
-                                    <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                    <img loading="lazy" src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                                 </div>
                                 <div className="p-6">
@@ -269,6 +261,9 @@ const OurStory = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Core Values Section */}
+            <Values />
 
             {/* CTA Section */}
             <section className="py-16 md:py-24 relative overflow-hidden">

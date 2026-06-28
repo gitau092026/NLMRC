@@ -156,7 +156,7 @@ const GalleryAdmin = () => {
                 {images?.map((image) => (
                     <Card key={image.id} className="overflow-hidden">
                         <div className="aspect-video relative group">
-                            <img
+                            <img loading="lazy"
                                 src={image.image_url}
                                 alt={image.title || "Gallery image"}
                                 className="w-full h-full object-cover transition-transform group-hover:scale-105"

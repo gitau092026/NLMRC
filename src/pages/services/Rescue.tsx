@@ -68,7 +68,7 @@ const Rescue = () => {
                             <div className="grid sm:grid-cols-2 gap-6 mt-12">
                                 <div className="rounded-2xl overflow-hidden shadow-lg h-64 group relative">
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                                    <img
+                                    <img loading="lazy"
                                         src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1000&auto=format&fit=crop"
                                         alt="Safe shelter environment"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -76,7 +76,7 @@ const Rescue = () => {
                                 </div>
                                 <div className="rounded-2xl overflow-hidden shadow-lg h-64 group relative">
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                                    <img
+                                    <img loading="lazy"
                                         src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1000&auto=format&fit=crop"
                                         alt="Counseling and support"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -108,7 +108,7 @@ const Rescue = () => {
                         <div className="w-full lg:w-[400px] space-y-8 sticky top-32">
                             <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
-                                <img
+                                <img loading="lazy"
                                     src="https://images.unsplash.com/photo-1739506314315-c7aff0d98d55?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt="Rescue Mission"
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"

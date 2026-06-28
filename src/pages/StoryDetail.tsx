@@ -97,7 +97,7 @@ const StoryDetail = () => {
                                     />
                                 </div>
                             ) : (
-                                <img
+                                <img loading="lazy"
                                     src={story.image_url}
                                     alt={story.name || story.title}
                                     className="w-full h-auto object-cover max-h-[600px]"
@@ -131,7 +131,7 @@ const StoryDetail = () => {
                                         >
                                             <div className="flex flex-col sm:flex-row h-full">
                                                 <div className="w-full sm:w-2/5 aspect-video sm:aspect-auto relative overflow-hidden">
-                                                    <img
+                                                    <img loading="lazy"
                                                         src={related.image_url}
                                                         alt={related.name || related.title}
                                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
