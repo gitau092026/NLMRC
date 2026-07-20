@@ -7,9 +7,10 @@ interface SEOProps {
   canonical?: string;
   ogType?: string;
   ogImage?: string;
+  schema?: object;
 }
 
-const SEO = ({ title, description, keywords, canonical, ogType = 'website', ogImage }: SEOProps) => (
+const SEO = ({ title, description, keywords, canonical, ogType = 'website', ogImage, schema }: SEOProps) => (
   <Helmet>
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -22,6 +23,11 @@ const SEO = ({ title, description, keywords, canonical, ogType = 'website', ogIm
     <meta name="twitter:description" content={description} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
     {canonical && <link rel="canonical" href={canonical} />}
+    {schema && (
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    )}
   </Helmet>
 );
 

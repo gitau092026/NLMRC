@@ -17,6 +17,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useJobs } from "@/integrations/supabase/hooks/useJobs";
 
+const slugify = (text: string) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+};
+
 const CareerPage = () => {
   const navigate = useNavigate();
   const { data: jobs, isLoading } = useJobs();
@@ -125,7 +136,7 @@ const CareerPage = () => {
                   <Card
                     key={job.id}
                     className="group hover:shadow-2xl hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 bg-card border-2 cursor-pointer"
-                    onClick={() => navigate(`/career/${job.id}`)}
+                    onClick={() => navigate(`/career/${slugify(job.title)}`)}
                   >
                     <CardHeader className="pb-4">
                       <div className="flex items-start justify-between gap-4">

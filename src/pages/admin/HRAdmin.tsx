@@ -30,7 +30,7 @@ const HRAdmin = () => {
         is_active: true
     });
 
-    const categories = ["Program Management", "Field Operations", "Communications", "Volunteer Management", "Finance", "Healthcare", "Education"];
+    const categories = ["Program Management", "Field Operations", "Communications", "Volunteer", "Finance", "Healthcare", "Education"];
     const types = ["Full-time", "Part-time", "Contract", "Internship", "Volunteer"];
 
     const handleEdit = (job: any) => {

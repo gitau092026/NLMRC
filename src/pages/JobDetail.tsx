@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useJob } from "@/integrations/supabase/hooks/useJobs";
+import { useJobs } from "@/integrations/supabase/hooks/useJobs";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -8,10 +8,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { MapPin, Clock, Briefcase, ArrowLeft, Calendar, Loader2 } from "lucide-react";
 
+const slugify = (text: string) => {
+    return text
+        .toString()
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w\-]+/g, '')
+        .replace(/\-\-+/g, '-')
+        .replace(/^-+/, '')
+        .replace(/-+$/, '');
+};
+
 const JobDetail = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
     const navigate = useNavigate();
-    const { data: job, isLoading, error } = useJob(id || "");
+    const { data: jobs, isLoading, error } = useJobs();
+    const job = jobs?.find(j => slugify(j.title) === slug || j.id === slug);
 
     if (isLoading) {
         return (
@@ -41,11 +53,44 @@ const JobDetail = () => {
         );
     }
 
+    const jobSchema = job ? {
+        "@context": "https://schema.org/",
+        "@type": "JobPosting",
+        "title": job.title,
+        "description": job.description,
+        "identifier": {
+            "@type": "PropertyValue",
+            "name": "NLMRC",
+            "value": job.id
+        },
+        "datePosted": job.created_at,
+        "employmentType": job.type === "Full-time" ? "FULL_TIME" : job.type === "Part-time" ? "PART_TIME" : job.type === "Volunteer" ? "VOLUNTEER" : job.type === "Contract" ? "CONTRACT" : "OTHER",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "New Life Mwangaza Rehabilitation Centre",
+            "sameAs": "https://www.newlifemwangaza.org"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": job.location,
+                "addressCountry": "KE"
+            }
+        }
+    } : undefined;
+
+    const canonicalUrl = job ? `https://www.newlifemwangaza.org/career/${slugify(job.title)}` : undefined;
+    const seoKeywords = job ? `${job.title}, ${job.category}, jobs in ${job.location}, career at NLMRC, New Life Mwangaza Rehabilitation Centre jobs, NGO jobs in Kenya` : "jobs, career, NLMRC";
+
     return (
         <div className="min-h-screen bg-background flex flex-col">
             <SEO 
                 title={`${job.title} - Career | NLMRC`} 
                 description={job.description ? job.description.substring(0, 150) + "..." : "Join our team at New Life Mwangaza Rehabilitation Centre."}
+                schema={jobSchema}
+                keywords={seoKeywords}
+                canonical={canonicalUrl}
             />
             <Navbar />
 
@@ -141,8 +186,8 @@ const JobDetail = () => {
                                             </DialogHeader>
                                             <div className="space-y-4 py-4">
                                                 <p>Please send your <strong>CV</strong> and <strong>Cover Letter</strong> to:</p>
-                                                <a href="mailto:career@newlifemwangaza.org" className="text-primary text-lg font-semibold hover:underline block">
-                                                    career@newlifemwangaza.org
+                                                <a href="mailto:director.mwangazarc@gmail.com" className="text-primary text-lg font-semibold hover:underline block">
+                                                    director.mwangazarc@gmail.com
                                                 </a>
                                                 <p className="text-sm text-muted-foreground">
                                                     Use the subject line: <span className="font-mono bg-muted px-1 rounded">Application: {job.title}</span>
