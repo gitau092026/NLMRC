@@ -189,9 +189,6 @@ const JobDetail = () => {
                                                 <a href="mailto:director.mwangazarc@gmail.com" className="text-primary text-lg font-semibold hover:underline block">
                                                     director.mwangazarc@gmail.com
                                                 </a>
-                                                <p className="text-sm text-muted-foreground">
-                                                    Use the subject line: <span className="font-mono bg-muted px-1 rounded">Application: {job.title}</span>
-                                                </p>
                                             </div>
                                         </DialogContent>
                                     </Dialog>
