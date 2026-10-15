@@ -1,11 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const PrivacyPolicy = () => {
     return (
         <div className="min-h-screen flex flex-col">
+            <SEO
+                title="Privacy Policy | New Life Mwangaza Rehabilitation Centre"
+                description="Privacy policy for New Life Mwangaza Rehabilitation Centre (NLMRC). Learn how we protect personal information, donor data, and child privacy."
+                canonical="https://www.newlifemwangaza.org/privacy-policy"
+            />
             <Navbar />
             <main className="flex-grow pt-16 pb-4">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">

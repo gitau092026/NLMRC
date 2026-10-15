@@ -8,119 +8,121 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* White background with very light green tint */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    /* ── Derived from the NLMRC logo palette ───────────────────────────────
+     *  Deep forest green  (hills/grass)  → primary & green tokens
+     *  Warm amber-orange  (sun rays)     → orange accent token
+     *  Dark charcoal      (road/figure)  → foreground
+     *  Off-white          (background)   → background
+     * ─────────────────────────────────────────────────────────────────── */
 
-    /* Pure white cards */
+    --background: 0 0% 100%;
+    --foreground: 120 8% 10%;        /* charcoal with a whisper of green */
+
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 120 8% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 120 8% 10%;
 
-    /* Green primary color */
-    --primary: 144 61% 35%;
+    /* Forest green - logo hills */
+    --primary: 134 60% 26%;
     --primary-foreground: 0 0% 100%;
 
-    /* Very light green secondary */
-    --secondary: 144 45% 96%;
-    --secondary-foreground: 144 61% 25%;
+    /* Very light tint of the logo green */
+    --secondary: 134 40% 94%;
+    --secondary-foreground: 134 60% 20%;
 
-    /* Light green muted */
-    --muted: 144 30% 94%;
-    --muted-foreground: 0 0% 45%;
+    /* Soft muted green surface */
+    --muted: 134 25% 92%;
+    --muted-foreground: 134 10% 42%;
 
-    /* Vibrant green accent */
-    --accent: 144 61% 45%;
+    /* Slightly brighter green for interactive accents */
+    --accent: 134 55% 34%;
     --accent-foreground: 0 0% 100%;
 
-    /* Dark green for special elements */
-    --green: 144 100% 21%;
+    /* Dark forest green - used for navbar, footers, section backgrounds */
+    --green: 134 72% 18%;
     --green-foreground: 0 0% 100%;
 
-    /* Orange color for hover effects */
-    --orange: 25 95% 53%;
+    /* Warm amber-orange - logo sun rays */
+    --orange: 33 92% 50%;
     --orange-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 4 78% 48%;        /* red-orange - logo hands */
     --destructive-foreground: 0 0% 100%;
 
-    /* Light borders */
-    --border: 144 20% 90%;
-    --input: 144 20% 90%;
-    --ring: 144 61% 45%;
+    /* Borders: light green-tinted */
+    --border: 134 18% 88%;
+    --input: 134 18% 88%;
+    --ring: 134 55% 34%;
 
     --radius: 0.75rem;
 
-    --primary-hover: 144 61% 30%;
-    --accent-hover: 144 61% 40%;
+    --primary-hover: 134 60% 21%;
+    --accent-hover: 134 55% 28%;
 
-    /* Green gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(144 61% 35%), hsl(144 61% 45%));
-    --gradient-accent: linear-gradient(135deg, hsl(144 61% 45%), hsl(144 61% 55%));
+    /* Logo-inspired gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(134 72% 18%), hsl(134 60% 26%));
+    --gradient-accent: linear-gradient(135deg, hsl(33 92% 50%), hsl(33 92% 42%));
 
-    --shadow-soft: 0 4px 20px -4px hsl(144 30% 20% / 0.1);
-    --shadow-elevated: 0 10px 40px -10px hsl(144 30% 20% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(134 40% 12% / 0.12);
+    --shadow-elevated: 0 10px 40px -10px hsl(134 40% 12% / 0.18);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 100%;
-
-    --sidebar-foreground: 0 0% 15%;
-
-    --sidebar-primary: 144 61% 35%;
-
+    --sidebar-foreground: 120 8% 10%;
+    --sidebar-primary: 134 60% 26%;
     --sidebar-primary-foreground: 0 0% 100%;
-
-    --sidebar-accent: 144 45% 96%;
-
-    --sidebar-accent-foreground: 144 61% 25%;
-
-    --sidebar-border: 144 20% 90%;
-
-    --sidebar-ring: 144 61% 45%;
+    --sidebar-accent: 134 40% 94%;
+    --sidebar-accent-foreground: 134 60% 20%;
+    --sidebar-border: 134 18% 88%;
+    --sidebar-ring: 134 55% 34%;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 137 84% 97%;
+    --background: 134 12% 8%;
+    --foreground: 134 20% 95%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 137 84% 97%;
+    --card: 134 10% 12%;
+    --card-foreground: 134 20% 95%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 137 84% 97%;
+    --popover: 134 10% 12%;
+    --popover-foreground: 134 20% 95%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 134 55% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 137 84% 97%;
+    --secondary: 134 10% 18%;
+    --secondary-foreground: 134 20% 95%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 137 50% 65%;
+    --muted: 134 10% 18%;
+    --muted-foreground: 134 20% 60%;
 
-    --accent: 40 100% 49%;
+    --accent: 33 92% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --green: 144 100% 21%;
+    --green: 134 72% 18%;
     --green-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 25% 97%;
+    --orange: 33 92% 50%;
+    --orange-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 100%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --destructive: 4 70% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 134 10% 22%;
+    --input: 134 10% 22%;
+    --ring: 134 55% 42%;
+
+    --sidebar-background: 134 12% 8%;
+    --sidebar-foreground: 134 20% 95%;
+    --sidebar-primary: 134 55% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 134 10% 18%;
+    --sidebar-accent-foreground: 134 20% 95%;
+    --sidebar-border: 134 10% 22%;
+    --sidebar-ring: 134 55% 42%;
   }
 }
 
@@ -156,5 +158,44 @@ All colors MUST be HSL.
   
   .animate-scroll:hover {
     animation-play-state: paused;
+  }
+
+  /* ── Hero image scale-in (replaces framer-motion on OurStory) ── */
+  @keyframes hero-scale {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1); }
+  }
+  .animate-hero-scale {
+    animation: hero-scale 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  /* ── Fade + slide up (replaces framer-motion entrance animations) */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* ── Improve font rendering on all browsers ── */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── Prevent layout shift from images without explicit dimensions ── */
+  img {
+    content-visibility: auto;
+  }
+
+  /* ── Page route transition (replaces framer-motion PageTransition) ── */
+  @keyframes page-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-page-in {
+    animation: page-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 }

@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+﻿import { Card } from "@/components/ui/card";
 import { ImageIcon } from "lucide-react";
 
 const Services = () => {
@@ -23,7 +23,7 @@ const Services = () => {
       title: "Rehabilitation",
       image: "/images/rehabilitation.webp",
       shortDescription: "Our 6-month residential rehab in Katani, Machakos, offers a holistic 12-step program for street-connected boys (14-18) using a therapeutic community model.",
-      fullDescription: "Our residential rehabilitation program provides a unique and holistic approach to the recovery and transformation of street-connected boys aged 14-18 years. Located in a serene environment in Katani, Machakos County, our program utilizes a therapeutic community model where clients and staff live together as a 'mini community'. The 6-month program is based on a 12-step approach and includes activities such as:",
+      fullDescription: "Our residential rehabilitation program provides a unique and holistic approach to the recovery and transformation of street-connected boys aged 14-17 years. Located in a serene environment in Katani, Machakos County, our program utilizes a therapeutic community model where clients and staff live together as a 'mini community'. The 6-month program is based on a 12-step approach and includes activities such as:",
       points: [
         "Continuous Assessments.",
         "Group Therapy.",

@@ -1,32 +1,11 @@
-import { Heart, Users, Shield, Scale, Briefcase } from "lucide-react";
-
 const Values = () => {
     const values = [
-        {
-            icon: Heart,
-            title: "Compassion",
-            description: "Treating all clients with love, empathy, and dignity."
-        },
-        {
-            icon: Shield,
-            title: "Integrity",
-            description: "Upholding honesty and trust in all dealings."
-        },
-        {
-            icon: Briefcase,
-            title: "Professionalism",
-            description: "Delivering services in accordance with the highest standards and ethics."
-        },
-        {
-            icon: Scale,
-            title: "Non-discrimination",
-            description: "Serving all beneficiaries impartially."
-        },
-        {
-            icon: Users,
-            title: "Teamwork",
-            description: "Collaborating effectively across all stakeholders."
-        }
+        { title: "Compassion",        description: "Treating all clients with love, empathy, and dignity." },
+        { title: "Integrity",         description: "Upholding honesty and trust in all dealings." },
+        { title: "Professionalism",   description: "Delivering services in accordance with the highest standards and ethics." },
+        { title: "Non-discrimination",description: "Serving all beneficiaries impartially." },
+        { title: "Teamwork",          description: "Collaborating effectively across all stakeholders." },
+        { title: "Dignity",           description: "All clients and beneficiaries are treated with respect and their humanity upheld." },
     ];
 
     return (
@@ -43,25 +22,15 @@ const Values = () => {
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {values.map((value, index) => {
-                        const Icon = value.icon;
-                        return (
-                            <div
-                                key={index}
-                                className="group bg-muted/30 rounded-xl p-8 hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20 hover:shadow-lg"
-                            >
-                                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors mb-4">
-                                    <Icon className="w-7 h-7 text-primary" />
-                                </div>
-                                <h3 className="text-xl font-bold text-foreground mb-3">
-                                    {value.title}
-                                </h3>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    {value.description}
-                                </p>
-                            </div>
-                        );
-                    })}
+                    {values.map((value, index) => (
+                        <div
+                            key={index}
+                            className="bg-muted/30 rounded-xl p-8 hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20 hover:shadow-lg"
+                        >
+                            <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

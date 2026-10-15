@@ -1,54 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import { Lock } from "lucide-react";
 import logo from "@/assets/logo.webp";
-import { useState } from "react";
-import { supabase } from "@/integrations/supabase/supabase";
-import { useToast } from "@/components/ui/use-toast";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert([{ email }]);
-
-      if (error) {
-        if (error.code === "23505") {
-          toast({
-            title: "Already subscribed",
-            description: "This email address is already on our newsletter list.",
-            variant: "default",
-          });
-        } else {
-          throw error;
-        }
-      } else {
-        toast({
-          title: "Successfully subscribed!",
-          description: "Thank you for subscribing to our newsletter.",
-        });
-        setEmail("");
-      }
-    } catch (error: any) {
-      console.error("Error subscribing:", error);
-      toast({
-        title: "Subscription Failed",
-        description: error.message || error.error_description || "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -68,9 +23,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img loading="lazy"
+              <img
                 src={logo}
                 alt="NGO Logo"
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-auto object-contain bg-white/5 rounded-lg p-1"
               />
             </Link>
@@ -169,37 +126,31 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div className="mt-12 pt-12 border-t border-primary-foreground/20">
-          <div className="max-w-2xl mx-auto text-center space-y-6">
+          <div className="max-w-2xl mx-auto text-center space-y-4">
             <h3 className="text-2xl font-bold">Subscribe to Our Newsletter</h3>
             <p className="text-primary-foreground/80">
               Stay updated with our latest news, events, and impact stories.
             </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <Button
-                type="submit"
-                variant="green"
-                size="default"
-                className="whitespace-nowrap"
-                disabled={loading}
-              >
-                {loading ? "Subscribing..." : "Subscribe"}
-              </Button>
-            </form>
+            <a
+              href="mailto:office@newlifemwangaza.org?subject=Newsletter%20Subscription"
+              className="inline-block bg-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green/90 transition-all duration-300"
+            >
+              Subscribe via Email
+            </a>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center text-primary-foreground/70">
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/70">
           <p>© {new Date().getFullYear()} New Life Mwangaza Rehabilitation Centre. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link to="/login" className="text-primary-foreground/50 hover:text-white transition-colors flex items-center gap-1.5 font-mono">
+              <Lock className="w-3 h-3" />
+              Staff Login
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

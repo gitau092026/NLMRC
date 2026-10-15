@@ -2,7 +2,7 @@ import { HandHeart, Users, FolderHeart } from "lucide-react";
 
 const Stats = () => {
     const stats = [
-        { icon: HandHeart, value: "2,500+", label: "RESCUED" },
+        { icon: HandHeart, value: "1,500+", label: "RESCUED" },
         { icon: Users, value: "1,000+", label: "STREET VISITS" },
         { icon: FolderHeart, value: "1,000+", label: "REFERRED" },
     ];

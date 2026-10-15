@@ -8,13 +8,15 @@ interface SEOProps {
   ogType?: string;
   ogImage?: string;
   schema?: object;
+  noindex?: boolean;
 }
 
-const SEO = ({ title, description, keywords, canonical, ogType = 'website', ogImage, schema }: SEOProps) => (
+const SEO = ({ title, description, keywords, canonical, ogType = 'website', ogImage, schema, noindex }: SEOProps) => (
   <Helmet>
     <title>{title}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />

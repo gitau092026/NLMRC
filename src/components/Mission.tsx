@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Target, Eye, Flag } from "lucide-react";
 
 const Mission = () => {
     return (
@@ -29,9 +28,6 @@ const Mission = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {/* Mission */}
                     <div className="bg-white rounded-3xl p-8 border border-gray-100 hover:border-[hsl(var(--orange))]/30 hover:shadow-2xl transition-all duration-500 group shadow-lg">
-                        <div className="w-16 h-16 bg-[hsl(var(--orange))]/10 rounded-2xl flex items-center justify-center mb-8 text-[hsl(var(--orange))] group-hover:scale-110 group-hover:bg-[hsl(var(--orange))] group-hover:text-white transition-all duration-300">
-                            <Target className="w-8 h-8" />
-                        </div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
                         <p className="text-gray-600 leading-relaxed">
                             To prevent children and youth from living and working on the streets and to rescue, rehabilitate, and reintegrate street-connected children through holistic, family-centred approaches.
@@ -40,9 +36,6 @@ const Mission = () => {
 
                     {/* Vision */}
                     <div className="bg-white rounded-3xl p-8 border border-gray-100 hover:border-green/30 hover:shadow-2xl transition-all duration-500 group shadow-lg">
-                        <div className="w-16 h-16 bg-green/10 rounded-2xl flex items-center justify-center mb-8 text-green group-hover:scale-110 group-hover:bg-green group-hover:text-white transition-all duration-300">
-                            <Eye className="w-8 h-8" />
-                        </div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                         <p className="text-gray-600 leading-relaxed">
                             A society where street-connected children and youth live in a family setup, leading useful, healthy, and drug-free lives full of opportunities.
@@ -51,9 +44,6 @@ const Mission = () => {
 
                     {/* Goal */}
                     <div className="bg-white rounded-3xl p-8 border border-gray-100 hover:border-[hsl(var(--orange))]/30 hover:shadow-2xl transition-all duration-500 group md:col-span-2 lg:col-span-1 shadow-lg">
-                        <div className="w-16 h-16 bg-[hsl(var(--orange))]/10 rounded-2xl flex items-center justify-center mb-8 text-[hsl(var(--orange))] group-hover:scale-110 group-hover:bg-[hsl(var(--orange))] group-hover:text-white transition-all duration-300">
-                            <Flag className="w-8 h-8" />
-                        </div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Goal</h3>
                         <div className="text-gray-600 leading-relaxed space-y-4">
                             <p>

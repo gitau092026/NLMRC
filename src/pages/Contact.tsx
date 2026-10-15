@@ -44,8 +44,9 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Contact Us | New Life Mwangaza Rehabilitation Centre"
-        description="Get in touch with New Life Mwangaza Rehabilitation Centre (NLMRC). P.O BOX 153 - 00519 MLOLONGO. Located in Katani, Syokimau. Call +254 795 822 903 or email office@newlifemwangaza.org."
+        title="Contact & Directions to Katani Centre | NLMRC Rehabilitation Centre"
+        description="Looking for contacts or directions to New Life Mwangaza Rehabilitation Centre near Nairobi? Located in Katani, Syokimau / Mlolongo, Machakos County. Call +254 795 822 903 or email office@newlifemwangaza.org."
+        keywords="contacts, direction, emial, any rehabilitation centre near me, addiction centre near me, drug abuse rehab near me, nlmrc location, katani syokimau rehabilitation centre, rehabilitation centres in machakos county"
         canonical="https://www.newlifemwangaza.org/contact"
       />
       <Navbar />
