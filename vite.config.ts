@@ -32,43 +32,6 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     // Use esbuild minifier (faster + smaller output)
     minify: "esbuild",
-    // Target broad browser support (ES2015 = IE-free modern baseline)
-    target: "es2015",
-    rollupOptions: {
-      output: {
-        // Split large third-party libraries into separate cacheable chunks
-        manualChunks(id) {
-          // Core React runtime — always cached
-          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
-            return "react-core";
-          }
-          // Router
-          if (id.includes("node_modules/react-router-dom") || id.includes("node_modules/react-router/")) {
-            return "router";
-          }
-          // Animation library (still used in some pages)
-          if (id.includes("node_modules/framer-motion")) {
-            return "framer-motion";
-          }
-          // Radix UI components (many small packages → one chunk)
-          if (id.includes("node_modules/@radix-ui/")) {
-            return "radix-ui";
-          }
-          // Charts (recharts + d3 dependencies)
-          if (id.includes("node_modules/recharts") || id.includes("node_modules/d3-")) {
-            return "charts";
-          }
-          // Embla carousel
-          if (id.includes("node_modules/embla-carousel")) {
-            return "embla-carousel";
-          }
-          // Remaining node_modules → vendor chunk
-          if (id.includes("node_modules/")) {
-            return "vendor";
-          }
-        },
-      },
-    },
   },
   resolve: {
     alias: {
