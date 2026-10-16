@@ -40,7 +40,7 @@ const STATS = [
 ];
 
 const INTERVAL = 7000;
-const FADE_MS  = 900;
+const FADE_MS  = 650;
 
 /* Preload an image URL off the critical path */
 function preloadImage(src: string) {
@@ -139,6 +139,7 @@ const Hero = () => {
                 zIndex:     isActive ? 2 : isLeaving ? 1 : 0,
                 transition: `opacity ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
                 pointerEvents: isActive ? "auto" : "none",
+                willChange: "opacity",
               }}
             >
               <img
@@ -157,29 +158,32 @@ const Hero = () => {
                   display: "block",
                   willChange: "transform",
                   /* Ken-Burns only while active and zoomed flag is on */
-                  transform: isActive && zoomed ? "scale(1.06)" : "scale(1)",
+                  transform: isActive && zoomed ? "scale(1.055)" : "scale(1)",
                   transition: isActive && zoomed
-                    ? "transform 9000ms cubic-bezier(0.25,0.46,0.45,0.94)"
-                    : "transform 600ms ease-out",
+                    ? "transform 10000ms cubic-bezier(0.22,0.46,0.55,1)"
+                    : `transform ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
                 }}
               />
             </div>
           );
         })}
 
-        {/* ── Bright & vibrant overlays: leaves photos bright and clear while anchoring text ── */}
+        {/* ── Overlays ────────────────────────────────────────────────────── */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ zIndex: 3 }}
         >
-          {/* Subtle directional gradient on the left side only to softly anchor text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
+          {/* Left gradient anchors text */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/25 to-transparent" />
 
-          {/* Gentle bottom shade to support stats strip and arrows without darkening the whole photo */}
-          <div className="absolute inset-x-0 bottom-0 h-44 sm:h-56 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          {/* Bottom gradient for stats strip */}
+          <div className="absolute inset-x-0 bottom-0 h-44 sm:h-56 bg-gradient-to-t from-black/72 via-black/20 to-transparent" />
 
-          {/* Very light top blend for header transition */}
+          {/* Top blend for navbar */}
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent" />
+
+          {/* Section bleed: feathers the hero edge into the white background below */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 to-transparent" style={{ mixBlendMode: "multiply" }} />
         </div>
 
         {/* ── Decorative vertical accent line (desktop only) ────────────── */}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Play, ArrowRight } from "lucide-react";
 
@@ -6,13 +6,36 @@ const YOUTUBE_VIDEO_ID = "W9iLCur6aJA";
 
 const About = () => {
   const [videoStarted, setVideoStarted] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /* Scroll-reveal: add .is-visible when section enters viewport */
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const targets = section.querySelectorAll<HTMLElement>(".reveal");
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-background overflow-hidden">
+    <section id="about" ref={sectionRef} className="py-20 md:py-28 bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* ── Top label ── */}
-        <div className="flex items-center gap-3 mb-10">
+        <div className="flex items-center gap-3 mb-10 reveal">
           <span className="w-8 h-px bg-orange" />
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange">
             About NLMRC
@@ -25,22 +48,22 @@ const About = () => {
           {/* ── LEFT: text content ── */}
           <div className="flex flex-col gap-8">
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.08] tracking-tight text-foreground">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.08] tracking-tight text-foreground reveal reveal-delay-1">
               Bringing{" "}
               <span className="text-green">light</span>{" "}
               to Kenya's street&#8209;connected children since 2008.
             </h2>
 
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-lg leading-relaxed reveal reveal-delay-2">
               New Life Mwangaza Rehabilitation Centre (NLMRC) is a Kenyan non-profit founded to rescue, rehabilitate, and reintegrate street-connected boys aged 14–18 affected by drug and substance abuse. Operating from a purpose-built centre in Katani, Machakos County, we walk with each child through a structured 6-month programme - therapy, education, family reunification, and aftercare - until they are safely home and thriving.
             </p>
 
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-lg leading-relaxed reveal reveal-delay-3">
               The name <em className="text-green font-semibold not-italic">Mwangaza</em> - Swahili for <em className="text-green font-semibold not-italic">"light"</em> - captures our founding conviction: every child deserves to be brought out of darkness and into a life of dignity, family, and purpose.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-start gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-start gap-4 pt-2 reveal reveal-delay-4">
               <Link
                 to="/about/story"
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-green text-white font-bold text-sm rounded-sm tracking-wide hover:bg-green/90 transition-all duration-200"
@@ -59,7 +82,7 @@ const About = () => {
           </div>
 
           {/* ── RIGHT: video ── */}
-          <div className="flex flex-col gap-5 lg:pt-4">
+          <div className="flex flex-col gap-5 lg:pt-4 reveal reveal-delay-2">
 
             {/* YouTube video */}
             <div className="relative overflow-hidden bg-black aspect-video">
