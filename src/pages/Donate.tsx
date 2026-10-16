@@ -190,9 +190,6 @@ const Donate = () => {
                   <h2 className="text-lg sm:text-xl font-black text-white">
                     Make a Donation
                   </h2>
-                  <p className="text-xs text-white/65 mt-1">
-                    Secure · M-Pesa & Card · Kenya
-                  </p>
                 </div>
 
                 <div className="p-6 sm:p-8 space-y-6">
