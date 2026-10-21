@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Heart, Users, ArrowRight } from "lucide-react";
+import { Heart, Users, ArrowRight, Linkedin } from "lucide-react";
 import Values from "@/components/Values";
 
 // Optimised WebP assets (converted from .jpg)
@@ -10,6 +10,94 @@ import childrenCommunity from "@/assets/story/children-community.webp";
 import rebuildingFamilies from "@/assets/story/rebuilding-families.webp";
 import empoweringYouth from "@/assets/story/empowering-youth.webp";
 import changingCommunities from "@/assets/story/changing-communities.webp";
+
+// Team profile photos
+import photoJaneMburu from "@/assets/Our Team/JANE WANGARI MBURU.jpg";
+import photoCosmasWekesa from "@/assets/Our Team/Cosmas Wekesa.jpg";
+import photoRobertKanake from "@/assets/Our Team/Robert Kanake.jpg";
+import photoDamaris from "@/assets/Our Team/Damaris Musembi.jpg";
+import photoAmos from "@/assets/Our Team/amos manani.jpg";
+import photoWallace from "@/assets/Our Team/Bulimo - Wallace Bulimo.jpg";
+import photoPenina from "@/assets/Our Team/Finance Office.jpg";
+import photoPaul from "@/assets/Our Team/OMUJALI EMURIA.jpg";
+
+/* ── TeamCard component ───────────────────────────────────────────── */
+interface TeamCardProps {
+    name: string;
+    role: string;
+    bio: string;
+    initials: string;
+    accentColor: "green" | "orange";
+    photo?: string;
+    linkedin?: string;
+    featured?: boolean;
+}
+
+const avatarColors: Record<"green" | "orange", string> = {
+    green: "bg-green text-white",
+    orange: "bg-orange text-white",
+};
+
+const TeamCard = ({ name, role, bio, initials, accentColor, photo, linkedin, featured }: TeamCardProps) => {
+    const accent = accentColor === "green" ? "text-green" : "text-orange";
+    const border = accentColor === "green" ? "border-green/20 hover:border-green/50" : "border-orange/20 hover:border-orange/50";
+
+    if (featured) {
+        return (
+            <div className={`flex flex-col sm:flex-row gap-6 sm:gap-8 bg-background rounded-[2rem] border ${border} p-6 sm:p-8 md:p-10 transition-shadow duration-300 hover:shadow-xl`}>
+                {/* Avatar */}
+                <div className="flex-shrink-0 flex justify-center sm:justify-start">
+                    {photo ? (
+                        <img src={photo} alt={name} className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover object-top" />
+                    ) : (
+                        <div className={`w-24 h-24 sm:w-28 sm:h-28 rounded-2xl flex items-center justify-center text-3xl font-black ${avatarColors[accentColor]}`}>
+                            {initials}
+                        </div>
+                    )}
+                </div>
+                {/* Content */}
+                <div className="flex flex-col gap-2 flex-1 min-w-0">
+                    <div>
+                        <h4 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">{name}</h4>
+                        <p className={`text-sm font-semibold uppercase tracking-wide mt-0.5 ${accent}`}>{role}</p>
+                    </div>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-light mt-1">{bio}</p>
+                    {linkedin && (
+                        <a href={linkedin} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-xs font-medium mt-1 ${accent} hover:underline`}>
+                            <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+                        </a>
+                    )}
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className={`flex flex-col gap-4 bg-background rounded-[1.5rem] md:rounded-[2rem] border ${border} p-6 transition-shadow duration-300 hover:shadow-lg`}>
+            {/* Avatar */}
+            <div className="flex items-center gap-4">
+                {photo ? (
+                    <img src={photo} alt={name} className="w-16 h-16 rounded-xl object-cover object-top flex-shrink-0" />
+                ) : (
+                    <div className={`w-16 h-16 rounded-xl flex items-center justify-center text-xl font-black flex-shrink-0 ${avatarColors[accentColor]}`}>
+                        {initials}
+                    </div>
+                )}
+                <div className="min-w-0">
+                    <h4 className="text-base font-bold text-foreground tracking-tight leading-tight">{name}</h4>
+                    <p className={`text-xs font-semibold uppercase tracking-wide mt-0.5 ${accent}`}>{role}</p>
+                </div>
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: bio }} />
+            {linkedin && (
+                <a href={linkedin} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-xs font-medium ${accent} hover:underline mt-auto pt-1`}>
+                    <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+                </a>
+            )}
+        </div>
+    );
+};
+/* ──────────────────────────────────────────────────────────────────── */
 
 const OurStory = () => {
     return (
@@ -307,54 +395,90 @@ const OurStory = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
                             Meet the <span className="text-green">Team</span>
                         </h2>
-                        <p className="text-muted-foreground text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
-                            Led by Director <strong className="text-foreground">Mrs. Jane Mburu</strong>, our qualified staff - social workers, counsellors, educators, and healthcare professionals - work as a therapeutic community alongside every child we serve.
-                        </p>
                     </div>
-                    <div className="flex flex-col items-center justify-center py-16 gap-6 bg-background rounded-[2rem] border border-border/50">
-                        <div className="text-center max-w-md">
-                            <h3 className="text-xl font-bold text-foreground mb-2">Team profiles coming soon</h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                We are updating this section with detailed profiles of our staff and volunteers.
-                                In the meantime, feel free to reach out to us directly.
-                            </p>
-                        </div>
-                        <a href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-green text-white font-semibold rounded-xl hover:bg-green/90 transition-colors duration-300 text-sm">
-                            <ArrowRight className="w-4 h-4" /> Contact the Team
-                        </a>
-                    </div>
-                </div>
-            </section>
 
-            {/* Partners Section */}
-            <section className="py-16 md:py-24 relative">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                    <div className="text-center mb-10">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green/10 border border-green/20 mb-6">
-                            <span className="w-2 h-2 rounded-full bg-green animate-pulse" />
-                            <span className="text-xs sm:text-sm font-medium tracking-wide uppercase text-green">Partnerships</span>
-                        </div>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-                            Partners Who Make It <span className="text-green">Possible</span>
-                        </h2>
-                        <p className="text-muted-foreground text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
-                            NLMRC collaborates with national and international partners committed to child welfare, rehabilitation, and community development.
-                        </p>
+                    {/* Director — featured card */}
+                    <div className="mb-8">
+                        <TeamCard
+                            name="Jane Mburu"
+                            role="Director"
+                            bio="MA Counselling Psychology (KU), BA Anthropology Hons (UON), Higher Diploma Human Resource Manager (CHRM), Certificate Counselor Supervisor (KCPA). Passionate about transforming lives and communities, restoring dignity and enhancing self-worth for the most vulnerable members of society."
+                            initials="JM"
+                            accentColor="green"
+                            photo={photoJaneMburu}
+                            featured
+                        />
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        {[
-                            { name: "HORIZONT3000", desc: "Lead technical and financial partner supporting NLMRC's strategic planning, capacity building, and programme development." },
-                            { name: "DKA Austria", desc: "Development cooperation partner (Austria) providing project support and enabling NLMRC's rehabilitation and prevention programmes." },
-                            { name: "eRko Slovakia", desc: "Christian Children Communities Movement (Slovakia) - a key partner supporting NLMRC's child protection work." },
-                            { name: "Street Families Rehabilitation Trust Fund (SFRTF)", desc: "Kenyan government fund providing project support, policy guidance, and quarterly accountability reporting for NLMRC's programmes." },
-                            { name: "Department of Children Services (DCS)", desc: "Government agency that handles court committals, child legal documentation, referrals, and centre inspections to ensure compliance." },
-                            { name: "Local Community & Churches", desc: "Nyumba Kumi leaders, local administration, churches, and community barazas partner with NLMRC on outreach, security, and client reintegration support." },
-                        ].map((p, i) => (
-                            <div key={i} className="bg-card border border-border/50 rounded-[1.5rem] p-6 hover:shadow-lg transition-shadow duration-300">
-                                <h3 className="text-base font-bold text-foreground mb-2">{p.name}</h3>
-                                <p className="text-muted-foreground text-sm font-light leading-relaxed">{p.desc}</p>
-                            </div>
-                        ))}
+
+                    {/* Board of Trustees */}
+                    <div className="mb-4">
+                        <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-muted-foreground mb-6 pl-1">Board of Trustees</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <TeamCard
+                                name="Cosmas Makhanu Wamwalo Wekesa"
+                                role="Chairperson, Board of Trustees"
+                                bio="Graduated 1974 (B.Sc. with Education Option). Served as High School Chemistry teacher, District Higher Education Officer, Provincial Examinations Officer, and retired from KNEC as Principal Examinations Secretary in 2009. Passion: &ldquo;Serve Humanity honestly, passionately and faithfully as a legacy.&rdquo;"
+                                initials="CW"
+                                accentColor="orange"
+                                photo={photoCosmasWekesa}
+                            />
+                            <TeamCard
+                                name="Robert Kanake Munya"
+                                role="Board Member, Trustees"
+                                bio="A registered and practising Quantity Surveyor and Managing Director of Shapa Consulting Ltd — a thriving quantity surveying firm in Kenya — for over fifteen years. Actively involved in community support projects and sits on several boards focused on vulnerable children."
+                                initials="RM"
+                                accentColor="orange"
+                                photo={photoRobertKanake}
+                            />
+                            <TeamCard
+                                name="Damaris Musau"
+                                role="Treasurer, Board of Trustees"
+                                bio="A Kenyan born in Machakos County, married and mother of 3 sons. A teacher by profession and currently a high school principal. An official in the church, Vice Chairperson of CASPA Schools–Machakos Diocese, and Vice Chairperson of Machakos County Secondary Schools Sports Association. Loves working with young people and the needy."
+                                initials="DM"
+                                accentColor="orange"
+                                photo={photoDamaris}
+                            />
+                            <TeamCard
+                                name="Paul Omujali Emuria"
+                                role="Trustee Board Member"
+                                bio="A teacher and administrator. As trustee members we provide oversight of the Board of Management, ensuring accountability and good governance in service of the Centre's mission."
+                                initials="PE"
+                                accentColor="orange"
+                                photo={photoPaul}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Board of Management */}
+                    <div className="mt-10">
+                        <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-muted-foreground mb-6 pl-1">Board of Management</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <TeamCard
+                                name="Prof. Wallace Bulimo"
+                                role="BOM Member"
+                                bio="A seasoned public health scientist and molecular virologist with over 25 years of experience advancing health research and innovation in Kenya and across the region. Senior researcher at KEMRI leading efforts in disease surveillance, antimicrobial resistance, and genomic studies. Supports NLMRC's mission through scientific insight and deep commitment to community empowerment."
+                                initials="WB"
+                                accentColor="green"
+                                photo={photoWallace}
+                            />
+                            <TeamCard
+                                name="CPA Amos Chweya Manani"
+                                role="Hon. Treasurer, Board of Management"
+                                bio="A Certified Public Accountant bringing financial stewardship and accountability to the Board of Management. Ensures sound financial governance in support of NLMRC's rehabilitation and community programmes."
+                                initials="AM"
+                                accentColor="green"
+                                photo={photoAmos}
+                            />
+                            <TeamCard
+                                name="Penina N. Mutwiri"
+                                role="Head of Finance & Support Services"
+                                bio="An accountant with 7 years of experience in financial reporting, budgeting, payroll management, and related internal controls. Holds a Bachelor's degree in Commerce (Finance) and is a CPA Finalist."
+                                initials="PM"
+                                accentColor="green"
+                                photo={photoPenina}
+                                linkedin="https://www.linkedin.com/in/naito-mutwiri"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>

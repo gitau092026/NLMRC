@@ -16,7 +16,7 @@ const SEO = ({ title, description, keywords, canonical, ogType = 'website', ogIm
     <title>{title}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
